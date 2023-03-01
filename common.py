@@ -14,6 +14,11 @@ class Task():
     id: int
 
     def dict(self):
-        return {k: str(v) for k, v in asdict(self).items()}
+        return {
+            k: str(v)
+            if not (isinstance(v, int) or isinstance(v, str))
+            else v
+            for k, v in asdict(self).items()
+        }
 
 
