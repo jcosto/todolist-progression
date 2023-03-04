@@ -1,25 +1,13 @@
 from common import Task, TASK_ONGOING, TASK_COMPLETED, TASK_DELETED
 TASK_COUNTER = 0
 
-import os
-import json
 TASK_JSON_PATH = "tasks.json"
+
+from db_json import get_json as _get_json, set_json as _set_json
 def get_json():
-    if not os.path.exists(TASK_JSON_PATH):
-        set_json(dict())
-    with open(TASK_JSON_PATH,'r') as fin:
-        a = json.load(fin)
-    a = {
-        int(k): Task(**a[k]) for k in a
-    }
-    return a
+    return _get_json(TASK_JSON_PATH)
 def set_json(tasks):
-    with open(TASK_JSON_PATH,'w') as fout:
-        json.dump({
-            k: tasks[k].dict() for k in tasks
-        }, fout, indent=4, sort_keys=True)
-
-
+    return _set_json(TASK_JSON_PATH, tasks)
 
 def handle_create_task(tasks: dict, name):
     """create task, default state TASK_ONGOING"""
