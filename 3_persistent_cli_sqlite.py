@@ -124,8 +124,8 @@ pat_complete = re.compile(r"complete (\d*)")
 pat_ongoing = re.compile(r"ongoing (\d*)")
 pat_delete = re.compile(r"delete (\d*)")
 def loop(session: Session):
-    print("### CLI IN-MEMORY TO-TO LIST ###")
-    print("##   To-do's are persistent! It's in a file   ##")
+    print("### CLI PERSISTENT TO-TO LIST ###")
+    print("##   To-do's are persistent! It's in a SQLITE file   ##")
     handle_view_tasks(session)
     while True:
         c = input("enter command: ")
