@@ -77,8 +77,8 @@ pat_complete = re.compile(r"complete (\d*)")
 pat_ongoing = re.compile(r"ongoing (\d*)")
 pat_delete = re.compile(r"delete (\d*)")
 def loop(tasks: dict):
-    print("### CLI IN-MEMORY TO-TO LIST ###")
-    print("##   To-do's are persistent! It's in a file   ##")
+    print("### CLI PERSISTENT TO-TO LIST ###")
+    print("##   To-do's are persistent! It's in a JSON file   ##")
     handle_view_tasks(tasks)
     while True:
         c = input("enter command: ")
