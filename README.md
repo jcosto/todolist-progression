@@ -1,5 +1,5 @@
 # To Do List App - Implementation Progression
-To-do list project; progression from CLI application to Web Application to Cloud Service for absolute beginners. The purpose of this repository is to provide beginners to full-stack development an step-by-step process of the progression from absolute basic command-line applicatin to a production-ready cloud service. This aims introduce new concepts at each stage which, while not explained in detaill, should provide inspiration for further self-learning
+To-do list project; progression from CLI application to Web Application to Cloud Service for absolute beginners. The purpose of this repository is to provide beginners to full-stack development a step-by-step process of the progression from absolute basic command-line applicatin to a production-ready cloud service. This aims introduce new concepts at each stage which, while not explained in detaill, should provide inspiration for further self-learning.
 
 Phase 1: CLI app to Web app
 1. CLI app, in-memory storage
@@ -33,7 +33,7 @@ Phase 3: Cloud app,  Load Testing
 ## Bootstrap Web app
 
 # Roadmap
-* develop Phase 1 items
+* develop Phase 1 items - done! 20230314
 * unit tests for Phase 1 items
 * develop Phase 2 items
 * unit tests for Phase 2 items
