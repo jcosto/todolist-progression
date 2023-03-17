@@ -12,7 +12,10 @@ def set_json(tasks):
 def handle_create_task(tasks: dict, name):
     """create task, default state TASK_ONGOING"""
     global TASK_COUNTER
-    TASK_COUNTER += 1
+    if len(tasks) == 0:
+        TASK_COUNTER = 1
+    else:
+        TASK_COUNTER = max(tasks.keys()) + 1
     t = Task(name, TASK_ONGOING, TASK_COUNTER)
     tasks[t.id] = t
     set_json(tasks)

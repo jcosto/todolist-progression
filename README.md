@@ -28,9 +28,24 @@ Phase 3: Cloud app,  Load Testing
 # Usage
 ## CLI app
 
-## Standard HTML Web app
+In-memory storage
 
-## Bootstrap Web app
+![CLI application, in-memory storage](/demos/1_inmemory_cli.gif)
+
+JSON persistent storage
+
+![CLI application, JSON persistent storage](/demos/2_persistent_cli_json.gif)
+
+## Web app
+
+Standard HTML
+
+![Standard HTML Web app](/demos/4_html_web_app.gif)
+
+Bootstrap
+
+![Standard HTML Web app](/demos/5_bootstrap_web_app.gif)
+
 
 # Roadmap
 * develop Phase 1 items - done! 20230314
