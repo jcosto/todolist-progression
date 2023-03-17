@@ -4,7 +4,7 @@ from common import Task
 
 def get_json(json_path):
     if not os.path.exists(json_path):
-        set_json(dict())
+        set_json(json_path, dict())
     with open(json_path,'r') as fin:
         a = json.load(fin)
     a = {

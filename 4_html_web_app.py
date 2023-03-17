@@ -125,8 +125,8 @@ def route_view():
                     </span>
                 </div>
                 <div id="task-name-update-{{task.id}}" style="display:none;">
-                    <form id="task-name-update-{{task.id}}-form" action="{{url_for('route_update_name',task_id=task.id)}}"  method="POST">
-                        <input type="text" name="name" placeholder="Task Name" value="{{task.name}}" onblur="hide_form_{{task.id}}()" id="task-name-update-{{task.id}}-form-name">
+                    <form id="task-name-update-{{task.id}}-form" action="{{url_for('route_update_name',task_id=task.id)}}"  method="POST" autocomplete="off">
+                        <input type="text" name="task_name" placeholder="Task Name" value="{{task.name}}" onblur="hide_form_{{task.id}}()" id="task-name-update-{{task.id}}-form-name" autocomplete="new-password">
                         <input type="submit" value="Submit" style="display:none;">
                     </form>
                 </div>
@@ -161,8 +161,8 @@ def route_view():
     </table>
 </p>
 <p>
-    <form action="{{url_for('route_create')}}" method="POST">
-        <input type="text" name="name" placeholder="Task Name">
+    <form action="{{url_for('route_create')}}" method="POST" autocomplete="off">
+        <input type="text" name="task_name" placeholder="Task Name" autocomplete="new-password">
         <input type="submit" value="Submit">
     </form>
 </p>
@@ -172,7 +172,7 @@ def route_view():
 
 @app.route("/list/create", methods=["POST"])
 def route_create():
-    name = request.form.get("name",None)
+    name = request.form.get("task_name",None)
     print("name", name)
     if not name is None:
         with sessionmaker(bind=ENGINE)() as session:
@@ -198,7 +198,7 @@ def route_update_state(task_id):
 
 @app.route("/list/update/name/<int:task_id>", methods=["POST"])
 def route_update_name(task_id):
-    name = request.form.get("name",None)
+    name = request.form.get("task_name",None)
     if not name is None:
         with sessionmaker(bind=ENGINE)() as session:
             handle_update_task_name(session, task_id, name)
